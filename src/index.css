@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .a4-paper {
+    width: 210mm;
+    min-height: 297mm;
+    height: auto;
+    overflow: visible;
+    padding-top: 20mm;
+    padding-bottom: 20mm;
+    padding-left: 30mm;
+    padding-right: 15mm;
+    font-family: "Times New Roman", Times, serif;
+    color: #000000;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    line-height: 1.35;
+  }
+
+  .a4-scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: #64748b #e2e8f0;
+  }
+
+  .a4-scroll-container::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .a4-scroll-container::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .a4-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #64748b;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+  }
+
+  .a4-scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #475569;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  body, html {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .a4-paper {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border: none !important;
+    transform: none !important;
+    padding-top: 20mm !important;
+    padding-bottom: 20mm !important;
+    padding-left: 30mm !important;
+    padding-right: 15mm !important;
+  }
+}
